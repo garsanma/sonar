@@ -6,17 +6,14 @@
 def server_up = false
 
 pipeline {
-    agent none
-    options {
-        // No bajamos el repo automaticamente tras el pipeline ya que bajaremos otro
-        //skipDefaultCheckout true
-        // Para que por consola salga la hora
-        timestamps()
-    }
+    agent any
+  tools {
+    maven 'gradle-jenkins'
+  }
     stages {
         stage('Build') {
             steps {
-				sh './gradlew build'
+		sh './gradlew build'
             }
         }
        
