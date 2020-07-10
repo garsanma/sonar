@@ -8,7 +8,7 @@ def server_up = false
 pipeline {
     agent any
   tools {
-    maven 'gradle-jenkins'
+    gradle 'gradle-jenkins'
   }
     stages {
         stage('Build') {
