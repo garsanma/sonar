@@ -89,4 +89,3 @@ if "%OS%"=="Windows_NT" endlocal
 
 :omega
 
-yes | $ANDROID_HOME/tools/bin/sdkmanager "build-tools;27.0.3"
