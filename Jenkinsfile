@@ -6,7 +6,7 @@
 def server_up = false
 
 pipeline {
-    agent any
+    agent { label "win" }
     stages {
         stage('Build') {
             steps {
