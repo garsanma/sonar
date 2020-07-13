@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
 			bat "./gradlew build'"
-			bat "yes | $ANDROID_HOME/tools/bin/sdkmanager "build-tools;27.0.3""
+			bat "cd $ANDROID_HOME/tools/bin/sdkmanager --licenses"
             }
         }
        
