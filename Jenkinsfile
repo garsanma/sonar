@@ -23,7 +23,7 @@ pipeline {
 	    signAndroidApks ( 
 	    keyStoreId: "AndroidSign", 
 	    keyAlias: "my-alias", 
-	    apksToSign: "**/*- unsigned.apk" 
+	    apksToSign: "**/*-unsigned.apk" 
 	    ) 
 	    }
     	} 	
