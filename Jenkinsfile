@@ -19,11 +19,13 @@ pipeline {
 	    }
 	}	
 	stage ('sign apk') { 
+	    steps{
 	    signAndroidApks ( 
 	    keyStoreId: "AndroidSign", 
 	    keyAlias: "my-alias", 
 	    apksToSign: "**/*- unsigned.apk" 
 	    ) 
+	    }
     	} 	
     }    
 }
