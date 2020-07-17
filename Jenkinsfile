@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-		bat "./gradlew assembleDebug"
+		sh "./gradlew assembleDebug"
             }
         }
 	stage('Compile') {
