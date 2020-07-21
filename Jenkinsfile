@@ -33,7 +33,7 @@ agent any
         	scannerHome = tool 'SonarQubeScanner'
     		}
    	    steps {
-       		 withSonarQubeEnv('sonarqube') {
+       		 withSonarQubeEnv('SonarQube') {
            	 bat "${scannerHome}/bin/sonar-scanner"
        	    	}
            }
