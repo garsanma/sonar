@@ -31,7 +31,7 @@ agent any
 	 stage('SonarQube analysis') {
 		 steps{
     		def sonarqubeScannerHome = tool name: 'SonarQubeScanner'
-  	 	bat "${sonarqubeScannerHome}/bin/sonar-scanner -Dsonar.host.url=https://localhost:9000 -Dproject.settings='sonar-project.properties' -Dsonar.projectBaseDir=."
+  	 	bat "${sonarqubeScannerHome}/bin/sonar-scanner -Dsonar.host.url=https://localhost:9000 -Dsonar.projectKey=github-jenkins-sonar -Dsonar.sources=./src"
 		 }
 	 }
     }
