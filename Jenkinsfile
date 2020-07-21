@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-		bat "./gradlew build"
+		bat "./gradlew assembleDebug"
             }
         }
 	stage('Compile') {
@@ -19,7 +19,12 @@ pipeline {
             archiveArtifacts artifacts: '**/*.apk', fingerprint: true, onlyIfSuccessful: true            
 	    }
 	}
-	    
+	stage('sign apk'){
+        AndroidSign (
+        keyAlias: "my-alias",
+        apksToSign: "**/*-unsigned.apk"
+        )
+       }  
 	
     }
 }
