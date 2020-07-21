@@ -11,7 +11,7 @@ agent any
     stages {
         stage('Build') {
             steps {
-		sh "./gradlew build"
+		bat "./gradlew build"
             }
         }
 	stage('Compile') {
