@@ -20,10 +20,12 @@ pipeline {
 	    }
 	}
 	stage('sign apk'){
-        AndroidSign (
-        keyAlias: "my-alias",
-        apksToSign: "**/*-unsigned.apk"
-        )
+	    steps{
+		AndroidSign (
+		keyAlias: "my-alias",
+		apksToSign: "**/*-unsigned.apk"
+		)
+	    }
        }  
 	
     }
