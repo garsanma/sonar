@@ -29,10 +29,10 @@ agent any
 	    }   
 	 }
 	 stage('SonarQube analysis') {
-		 steps{
+	     steps{
     		def sonarqubeScannerHome = tool name: 'SonarQubeScanner'
   	 	bat "${sonarqubeScannerHome}/bin/sonar-scanner -Dsonar.host.url=https://localhost:9000 -Dsonar.projectKey=github-jenkins-sonar -Dsonar.sources=./src"
-		 }
+	     }
 	 }
     }
 }  
