@@ -11,7 +11,7 @@ agent any
     stages {
         stage('Build') {
             steps {
-		sh "./gradlew build"
+		bat "./gradlew build"
             }
         }
 	stage('Compile') {
@@ -27,6 +27,12 @@ agent any
 	    apksToSign: "**/*-unsigned.apk" 
 	    ) 
 	    }   
+	 }
+	 stage('SonarQube analysis') {
+		 steps{
+    		def sonarqubeScannerHome = tool name: 'SonarQubeScanner'
+  	 	bat "${sonarqubeScannerHome}/bin/sonar-scanner -Dsonar.host.url=https://localhost:9000 -Dproject.settings='sonar-project.properties' -Dsonar.projectBaseDir=."
+		 }
 	 }
     }
 }  
