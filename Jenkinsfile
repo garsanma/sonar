@@ -11,7 +11,7 @@ agent any
     stages {
         stage('Build') {
             steps {
-		bat "./gradlew build"
+		sh "./gradlew build"
             }
         }
 	stage('Compile') {
@@ -34,7 +34,7 @@ agent any
     		}
    	    steps {
        		 withSonarQubeEnv('SonarQube') {
-           	 bat "${scannerHome}/bin/sonar-scanner -X -Dproject.settings=sonar-scanner.properties "
+           	 sh "${scannerHome}/bin/sonar-scanner -X -Dproject.settings=sonar-scanner.properties "
        	    	}
            }
    	 }
