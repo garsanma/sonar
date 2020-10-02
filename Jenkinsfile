@@ -33,7 +33,7 @@ pipeline {
         	scannerHome = tool 'SonarQubeScanner'
     		}
    	    steps {
-       		 withSonarQubeEnv('SonarQube') {
+       		 withSonarQubeEnv('SonarQubeGarsanma') {
            	 sh "${scannerHome}/bin/sonar-scanner -X -Dproject.settings=sonar-scanner.properties "
        	    	}
            }
